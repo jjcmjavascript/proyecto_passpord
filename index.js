@@ -2,7 +2,7 @@ const express = require('express');
 const server = express(); 
 const router = express.Router(); 
 const rutas  = require('./config/rutas'); 
-const sequelize = require('sequelize'), hash = require('bcrypt'), env = require('dotenv'); 
+const sequelize = require('sequelize'), hash = require('bcrypt'), env = require('dotenv').config(); 
 
 
 server.use( express.urlencoded({extended : true }))
