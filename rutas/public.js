@@ -1,11 +1,16 @@
+const UsuarioController  = require('../Controllers/UsuarioController');
+
 const rutas  =  [
-	{	
+	{
 		path : '/',
 		method : 'get',
-		func : (req, res)=>{ console.log(req, res) ;  res.json({ nombre : 'junior' })}, 
+		func : (req, res)=>{  (new UsuarioController).view(req, res); },
 	},
-	
-	
-]; 
+	{
+		path : '/usuario',
+		method : 'get',
+		func : (req, res)=>{  (new UsuarioController).usuario(req, res); },
+	},
+];
 
-module.exports = rutas; 
+module.exports = rutas;
